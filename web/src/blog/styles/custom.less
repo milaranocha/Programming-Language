@@ -1,0 +1,35 @@
+// Define a variable
+@primary-color: #007bff;
+
+// Mixin for rounded corners
+.rounded-corners(@radius) {
+    border-radius: @radius;
+}
+
+// Apply styles
+body {
+    background-color: lighten(@primary-color, 40%);
+    font-family: Arial, sans-serif;
+    
+    // Nested Selectors
+    header {
+        background-color: @primary-color;
+        color: white;
+        padding: 20px;
+        
+        h1 {
+            font-size: 2rem;
+        }
+    }
+}
+
+.button-custom {
+    background-color: @primary-color;
+    color: white;
+    padding: 10px 20px;
+    .rounded-corners(10px);
+    
+    &:hover {
+        background-color: darken(@primary-color, 10%);
+    }
+}
